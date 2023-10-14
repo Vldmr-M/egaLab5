@@ -15,7 +15,7 @@ def findMin():
 file = open('matrix.txt','r')
 matrix=[]
 for line in file:
-    print(line.split())
+    #print(line.split())
     matrix.append([float(x) for x in line.split()])
 
 X=[i for i in range(len(matrix[0]))]
@@ -23,9 +23,14 @@ S=[]
 
 
 nextTown=random.choice(X)
+print(f"///////////////////////\nШаг 1")
+print(f"текущий обход - {[x+1 for x in S]}")
+print(f"Выбран город {nextTown+1}")
 X.remove(nextTown)
 S.append(nextTown)
 currange = 0
+print(f"длина текущего обхода - {currange}")
+
 
 for i in range(len(X)):
     print(f"///////////////////////\nШаг {i+2}")
